@@ -45,9 +45,12 @@ Required markup:
   <desc id="desc">What the image shows, in one or two sentences.</desc>
   <!-- motion:start -->
   <style>
-    .m-in { animation: m-in .8s ease-out both; }
-    @keyframes m-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m-card { animation: m-settle .8s .2s cubic-bezier(.2,.7,.2,1) both; }
+      .m-mark { animation: m-ink .5s 1s ease-out both; }
+      @keyframes m-settle { from { transform: translateY(-24px); } to { transform: none; } }
+      @keyframes m-ink { from { opacity: .35; } to { opacity: 1; } }
+    }
   </style>
   <!-- motion:end -->
   …
@@ -57,6 +60,7 @@ Required markup:
 Motion rules:
 
 - One run, total ≤ 4 s, no loops, no flashing.
+- The first frame must already be a useful composition: titles and structure static, secondary elements moved with `transform` or faded from opacity ≥ 0.3, never from 0 (see [accessibility.md](../guidelines/accessibility.md#motion)).
 - Animate *into* the natural state (`both` fill mode), so the file without its `<style>` is the final frame.
 - CSS `transform` replaces an element's `transform` attribute. Put the animation class on a wrapper `<g>` and the geometry transform on a child.
 - Generate the still, never hand-edit it:

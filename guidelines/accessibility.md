@@ -26,8 +26,17 @@ A premium README works for someone on a phone, in dark mode, with reduced motion
 
 - Animate only the hero, and only when motion explains something (assembly, flow, arrival).
 - One run, no loop, **four seconds or less**, no flashing (never more than three flashes per second).
-- Inside the SVG: `@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }`.
-- Elements animate *from* hidden *to* their natural state with `animation-fill-mode: both`, so disabling animation shows the final frame.
+- **The first frame is already the picture.** Hidden tabs, thumbnails, previews and static renderers may show the SVG at time zero, before (or without) any animation. Never start from invisible: keep titles and structure static, move secondary elements with `transform`, and fade only from a visible level (opacity ≥ 0.3). The validator rejects keyframes that start at `opacity: 0`.
+- Gate every animation behind the user's preference, so reduced motion (and engines without the media query) get the final state with no override:
+
+  ```css
+  @media (prefers-reduced-motion: no-preference) {
+    .m-card { animation: m-settle .8s .2s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes m-settle { from { transform: translateY(-24px); } to { transform: none; } }
+  }
+  ```
+
+- Animate *into* the natural state (`animation-fill-mode: both`), so the file without its motion block is the final frame.
 - Ship a static twin, `hero-still.svg`, equal to the final frame, and serve it with `<picture>`:
 
   ```html

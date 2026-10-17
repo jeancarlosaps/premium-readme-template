@@ -257,7 +257,16 @@ for (const [svgFile, sources] of referencedSvgs) {
   if (isStill && animated) error(svgFile, "static fallback contains animation");
   if (!animated || isStill) continue;
 
-  if (!/prefers-reduced-motion\s*:\s*reduce/.test(svg)) error(svgFile, "animated SVG without a prefers-reduced-motion: reduce rule");
+  if (!/prefers-reduced-motion\s*:\s*(reduce|no-preference)/.test(svg)) {
+    error(svgFile, "animated SVG without a prefers-reduced-motion rule (gate animations with no-preference, or disable them with reduce)");
+  }
+  // The first frame is what static renderers, hidden tabs and thumbnails show: it must not be blank.
+  for (const m of svg.matchAll(/@keyframes\s+([\w-]+)\s*\{([\s\S]*?\})\s*\}/g)) {
+    const first = m[2].match(/(?:^|\})\s*(?:from|0%)\s*(?:,[^{]*)?\{([^}]*)\}/);
+    if (first && /(?:^|[;\s])(?:fill-|stroke-)?opacity\s*:\s*0(?:\.0+)?\s*(?:;|$)/.test(first[1].trim())) {
+      error(svgFile, `@keyframes ${m[1]} starts fully transparent; the first frame must already be a useful composition`);
+    }
+  }
   const stillFile = svgFile.replace(/\.svg$/i, "-still.svg");
   const expected = MOTION_BLOCK.test(svg) ? svg.replace(MOTION_BLOCK, "") : undefined;
 

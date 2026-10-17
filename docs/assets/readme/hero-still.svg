@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
   <title id="title">Premium README Template — Beautiful documentation. Real engineering.</title>
-  <desc id="desc">Editorial proof sheet. On the left, the name Premium README and the tagline. On the right, four stacked sheets drawn in isometric view, from bottom to top: code, architecture, documentation and the finished README experience. The animation plays once in under four seconds and is disabled when reduced motion is requested; hero-still.svg is the final frame.</desc>
+  <desc id="desc">Editorial proof sheet. On the left, the name Premium README and the tagline. On the right, four stacked sheets drawn in isometric view, from bottom to top: code, architecture, documentation and the finished README experience. The sheets settle into the stack once, in under three seconds; every element is visible from the first frame, and nothing moves when reduced motion is requested. hero-still.svg is the final frame.</desc>
   <defs>
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#101114" opacity=".09"/></pattern>
     <clipPath id="frame"><rect width="1600" height="760" rx="24"/></clipPath>
@@ -24,7 +24,7 @@
     <path d="M80 96h112" stroke="#2340F5" stroke-width="3"/>
 
     <!-- copy -->
-    <g class="m-in">
+    <g>
       <text x="80" y="190" fill="#2340F5" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" letter-spacing="2.4" font-weight="700">A DOCUMENTATION SYSTEM FOR CODING AGENTS</text>
       <g fill="#101114" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-weight="800">
         <text x="76" y="318" font-size="140" textLength="560" lengthAdjust="spacingAndGlyphs">Premium</text>
@@ -32,11 +32,11 @@
       </g>
     </g>
     <rect class="m-caret" x="698" y="346" width="34" height="100" fill="#2340F5"/>
-    <g class="m-tag" font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, Georgia, 'Times New Roman', serif" font-style="italic" font-size="40">
+    <g font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, Georgia, 'Times New Roman', serif" font-style="italic" font-size="40">
       <text x="80" y="530" fill="#101114">Beautiful documentation.</text>
       <text x="80" y="580" fill="#2340F5">Real engineering.</text>
     </g>
-    <g class="m-tag">
+    <g>
       <g fill="#555A66" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="1.6">
         <text x="80" y="676">CODE</text>
         <text x="164" y="676">ARCHITECTURE</text>

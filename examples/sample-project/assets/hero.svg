@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
   <title id="title">waypost — Webhooks that arrive. Fictional demonstration project.</title>
-  <desc id="desc">Dark illustration for a fictional Go webhook delivery service. Three delivery lanes leave an ingest node and pass waypoints on the way to three endpoints. Two deliveries succeed on the first attempt; the middle one retries once with backoff and then succeeds. The animation plays once in under three seconds and is disabled when reduced motion is requested; hero-still.svg is the final frame.</desc>
+  <desc id="desc">Dark illustration for a fictional Go webhook delivery service. Three delivery lanes leave an ingest node and pass waypoints on the way to three endpoints. Two deliveries succeed on the first attempt; the middle one retries once with backoff and then succeeds. The packets travel to the endpoints once, in under three seconds; every element is visible from the first frame, and nothing moves when reduced motion is requested. hero-still.svg is the final frame.</desc>
   <!-- motion:start -->
   <style>
-    .m-copy { animation: m-fade .8s ease-out both; }
-    .m-p1 { animation: m-travel 1.4s .4s cubic-bezier(.45,0,.2,1) both; }
-    .m-p2 { animation: m-travel 1.8s .6s cubic-bezier(.45,0,.2,1) both; }
-    .m-p3 { animation: m-travel 1.2s .8s cubic-bezier(.45,0,.2,1) both; }
-    .m-retry { animation: m-fade .5s 1.3s ease-out both; }
-    .m-ok1 { animation: m-fade .4s 1.8s ease-out both; }
-    .m-ok3 { animation: m-fade .4s 2.0s ease-out both; }
-    .m-ok2 { animation: m-fade .4s 2.4s ease-out both; }
-    @keyframes m-fade { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes m-travel { from { opacity: 0; transform: translateX(-400px); } 12% { opacity: 1; } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m-p1 { animation: m-travel 1.4s .2s cubic-bezier(.45,0,.2,1) both; }
+      .m-p2 { animation: m-travel 1.8s .4s cubic-bezier(.45,0,.2,1) both; }
+      .m-p3 { animation: m-travel 1.2s .6s cubic-bezier(.45,0,.2,1) both; }
+      .m-retry { animation: m-ink .5s 1.1s ease-out both; }
+      .m-ok1 { animation: m-ink .4s 1.6s ease-out both; }
+      .m-ok3 { animation: m-ink .4s 1.8s ease-out both; }
+      .m-ok2 { animation: m-ink .4s 2.2s ease-out both; }
+      @keyframes m-travel { from { transform: translateX(-380px); } to { transform: none; } }
+      @keyframes m-ink { from { opacity: .3; } to { opacity: 1; } }
+    }
   </style>
   <!-- motion:end -->
   <defs>
@@ -32,7 +32,7 @@
     <path d="M80 98h1440" stroke="#22304A"/>
 
     <!-- copy -->
-    <g class="m-copy">
+    <g>
       <path d="M86 196v116" stroke="#3DDC97" stroke-width="10"/>
       <path d="M91 200h44l-12 16 12 16H91z" fill="#3DDC97"/>
       <text x="150" y="304" fill="#E8EEF7" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="118" font-weight="800" textLength="500" lengthAdjust="spacingAndGlyphs">waypost</text>

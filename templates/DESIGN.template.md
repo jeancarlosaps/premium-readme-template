@@ -35,7 +35,7 @@ Derived from: {{SOURCE_OF_IDENTITY}} <!-- e.g. "lib/app/theme/colors.dart", "the
 
 ## Motion
 
-- Hero only, one run, {{DURATION}} ≤ 4 s, disabled by `prefers-reduced-motion`.
+- Hero only, one run, {{DURATION}} ≤ 4 s, gated by `@media (prefers-reduced-motion: no-preference)`; every element visible from the first frame.
 - `hero-still.svg` is generated from `hero.svg` (`--write-stills`), never edited by hand.
 
 ## Files

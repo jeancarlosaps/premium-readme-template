@@ -41,8 +41,8 @@ Measured with the WCAG 2.2 relative-luminance formula.
 
 ## Motion
 
-- `hero.svg` only. Sheets drop into the stack one by one, callouts and the caret follow; the last animation ends at 3.0 s.
-- Disabled by `prefers-reduced-motion: reduce`.
+- `hero.svg` only. Sheets settle into the stack one by one (transform only), callouts and the caret gain full ink; the last animation ends at 2.7 s.
+- Every element is visible from the first frame. Animations live inside `@media (prefers-reduced-motion: no-preference)`.
 - `hero-still.svg` is generated from `hero.svg` with `node scripts/validate-readme.mjs --write-stills`.
 
 ## Files
