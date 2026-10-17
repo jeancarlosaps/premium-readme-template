@@ -1,0 +1,15 @@
+{
+  "config": {
+    "default": true,
+    // Centred heroes, navigation rows and <picture> need inline HTML.
+    "MD033": false,
+    // READMEs open with an anchor and a hero image, not a Markdown heading.
+    "MD041": false,
+    // Prose is not hard-wrapped; tables and URLs are long by nature.
+    "MD013": false,
+    // Tables use the compact "|---|" delimiter row; column alignment is not worth the diff noise.
+    "MD060": false
+  },
+  "globs": ["**/*.md", ".cursor/**/*.mdc"],
+  "ignores": ["node_modules/**"]
+}

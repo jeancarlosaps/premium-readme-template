@@ -1,0 +1,46 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Install xmllint
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libxml2-utils
+
+      - name: Static fallbacks are up to date
+        run: |
+          node scripts/validate-readme.mjs --write-stills > /dev/null || true
+          git diff --exit-code -- '*.svg' || {
+            echo "::error::A *-still.svg is out of date. Run: node scripts/validate-readme.mjs --write-stills"
+            exit 1
+          }
+
+      - name: Links, anchors, SVGs, placeholders, required files
+        run: node scripts/validate-readme.mjs --require README.md,LICENSE,CONTRIBUTING.md,AGENTS.md,CLAUDE.md,templates/README.template.md,templates/DESIGN.template.md,templates/CONTRIBUTING.template.md,prompts/apply-to-project.md,prompts/audit-existing-readme.md,prompts/create-visual-assets.md
+
+      - name: Markdown lint
+        run: npx --yes markdownlint-cli2@0.23.3
