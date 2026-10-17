@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Premium README Template — Beautiful documentation. Real engineering.</title>
+  <desc id="desc">Editorial proof sheet. On the left, the name Premium README and the tagline. On the right, four stacked sheets drawn in isometric view, from bottom to top: code, architecture, documentation and the finished README experience. The animation plays once in under four seconds and is disabled when reduced motion is requested; hero-still.svg is the final frame.</desc>
+  <!-- motion:start -->
+  <style>
+    .m-in { animation: m-in .9s cubic-bezier(.2,.7,.2,1) both; }
+    .m-tag { animation: m-fade .8s .5s ease-out both; }
+    .m-l1 { animation: m-drop .8s .15s cubic-bezier(.2,.7,.2,1) both; }
+    .m-l2 { animation: m-drop .8s .45s cubic-bezier(.2,.7,.2,1) both; }
+    .m-l3 { animation: m-drop .8s .75s cubic-bezier(.2,.7,.2,1) both; }
+    .m-l4 { animation: m-drop .8s 1.05s cubic-bezier(.2,.7,.2,1) both; }
+    .m-c1 { animation: m-fade .5s 1.0s ease-out both; }
+    .m-c2 { animation: m-fade .5s 1.3s ease-out both; }
+    .m-c3 { animation: m-fade .5s 1.6s ease-out both; }
+    .m-c4 { animation: m-fade .5s 1.9s ease-out both; }
+    .m-guide { animation: m-fade .8s 1.8s ease-out both; }
+    .m-caret { animation: m-fade .4s 2.6s ease-out both; }
+    @keyframes m-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes m-drop { from { opacity: 0; transform: translateY(-56px); } to { opacity: 1; transform: none; } }
+    @keyframes m-fade { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- motion:end -->
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#101114" opacity=".09"/></pattern>
+    <clipPath id="frame"><rect width="1600" height="760" rx="24"/></clipPath>
+    <rect id="sheet" width="320" height="320" rx="10"/>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1600" height="760" fill="#F4F2EC"/>
+    <rect width="1600" height="760" fill="url(#dots)"/>
+
+    <!-- crop marks and header rule -->
+    <g fill="none" stroke="#101114" stroke-width="1.5">
+      <path d="M40 64V40h24M1536 40h24v24M40 696v24h24M1536 720h24v-24"/>
+    </g>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="2">
+      <text x="80" y="76" fill="#101114" font-weight="700">PRT/01</text>
+      <text x="180" y="76" fill="#555A66">PREMIUM README TEMPLATE</text>
+      <text x="1520" y="76" fill="#555A66" text-anchor="end">PROOF SHEET — REV. 01</text>
+    </g>
+    <path d="M80 96h1440" stroke="#101114" stroke-opacity=".18"/>
+    <path d="M80 96h112" stroke="#2340F5" stroke-width="3"/>
+
+    <!-- copy -->
+    <g class="m-in">
+      <text x="80" y="190" fill="#2340F5" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" letter-spacing="2.4" font-weight="700">A DOCUMENTATION SYSTEM FOR CODING AGENTS</text>
+      <g fill="#101114" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-weight="800">
+        <text x="76" y="318" font-size="140" textLength="560" lengthAdjust="spacingAndGlyphs">Premium</text>
+        <text x="74" y="446" font-size="140" textLength="604" lengthAdjust="spacingAndGlyphs">README</text>
+      </g>
+    </g>
+    <rect class="m-caret" x="698" y="346" width="34" height="100" fill="#2340F5"/>
+    <g class="m-tag" font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, Georgia, 'Times New Roman', serif" font-style="italic" font-size="40">
+      <text x="80" y="530" fill="#101114">Beautiful documentation.</text>
+      <text x="80" y="580" fill="#2340F5">Real engineering.</text>
+    </g>
+    <g class="m-tag">
+      <g fill="#555A66" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="1.6">
+        <text x="80" y="676">CODE</text>
+        <text x="164" y="676">ARCHITECTURE</text>
+        <text x="328" y="676">DOCUMENTATION</text>
+        <text x="502" y="676" fill="#2340F5" font-weight="700">EXPERIENCE</text>
+      </g>
+      <path d="M132 671h20m-6-5 6 5-6 5M296 671h20m-6-5 6 5-6 5M470 671h20m-6-5 6 5-6 5" fill="none" stroke="#555A66" stroke-width="1.6"/>
+    </g>
+
+    <!-- layer 1 · code -->
+    <g class="m-l1">
+      <use href="#sheet" transform="matrix(.7794 .45 -.7794 .45 1060 432)" fill="#101114" fill-opacity=".07"/>
+      <g transform="matrix(.7794 .45 -.7794 .45 1060 420)">
+        <use href="#sheet" fill="#FFFFFF" stroke="#101114" stroke-width="2"/>
+        <g fill="#555A66" fill-opacity=".55">
+          <rect x="80" y="36" width="96" height="10" rx="5"/><rect x="48" y="60" width="64" height="10" rx="5"/>
+          <rect x="168" y="60" width="80" height="10" rx="5"/><rect x="48" y="84" width="120" height="10" rx="5"/>
+          <rect x="136" y="108" width="104" height="10" rx="5"/><rect x="72" y="132" width="160" height="10" rx="5"/>
+          <rect x="48" y="156" width="40" height="10" rx="5"/><rect x="24" y="180" width="24" height="10" rx="5"/>
+          <rect x="80" y="212" width="120" height="10" rx="5"/><rect x="48" y="236" width="88" height="10" rx="5"/>
+          <rect x="208" y="236" width="72" height="10" rx="5"/><rect x="72" y="260" width="184" height="10" rx="5"/>
+          <rect x="48" y="284" width="64" height="10" rx="5"/><rect x="120" y="284" width="120" height="10" rx="5"/>
+        </g>
+        <g fill="#2340F5">
+          <rect x="24" y="36" width="48" height="10" rx="5"/><rect x="120" y="60" width="40" height="10" rx="5"/>
+          <rect x="72" y="108" width="56" height="10" rx="5"/><rect x="24" y="212" width="48" height="10" rx="5"/>
+          <rect x="144" y="236" width="56" height="10" rx="5"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- layer 2 · architecture -->
+    <g class="m-l2">
+      <use href="#sheet" transform="matrix(.7794 .45 -.7794 .45 1060 342)" fill="#101114" fill-opacity=".07"/>
+      <g transform="matrix(.7794 .45 -.7794 .45 1060 330)">
+        <use href="#sheet" fill="#FFFFFF" fill-opacity=".92" stroke="#101114" stroke-width="2"/>
+        <path d="M80 266h54m52 0h54m26-26v-54m0-52V80M160 186v54m26-80h54" fill="none" stroke="#101114" stroke-width="2.5"/>
+        <g fill="#FFFFFF" stroke="#101114" stroke-width="2.5">
+          <rect x="28" y="240" width="52" height="52" rx="8"/><rect x="134" y="240" width="52" height="52" rx="8"/>
+          <rect x="240" y="134" width="52" height="52" rx="8"/><rect x="240" y="28" width="52" height="52" rx="8"/>
+          <rect x="134" y="134" width="52" height="52" rx="8" fill="#E3E7FE"/>
+        </g>
+        <rect x="240" y="240" width="52" height="52" rx="8" fill="#2340F5" stroke="#101114" stroke-width="2.5"/>
+      </g>
+    </g>
+
+    <!-- layer 3 · documentation -->
+    <g class="m-l3">
+      <use href="#sheet" transform="matrix(.7794 .45 -.7794 .45 1060 252)" fill="#101114" fill-opacity=".07"/>
+      <g transform="matrix(.7794 .45 -.7794 .45 1060 240)">
+        <use href="#sheet" fill="#FFFFFF" fill-opacity=".92" stroke="#101114" stroke-width="2"/>
+        <rect x="24" y="24" width="150" height="16" rx="3" fill="#101114"/>
+        <rect x="24" y="112" width="120" height="12" rx="3" fill="#101114"/>
+        <g fill="#555A66" fill-opacity=".5">
+          <rect x="24" y="56" width="200" height="8" rx="4"/><rect x="24" y="72" width="180" height="8" rx="4"/>
+          <rect x="24" y="88" width="192" height="8" rx="4"/><rect x="24" y="136" width="200" height="8" rx="4"/>
+          <rect x="24" y="152" width="170" height="8" rx="4"/><rect x="24" y="168" width="196" height="8" rx="4"/>
+          <rect x="240" y="40" width="44" height="6" rx="3"/><rect x="240" y="52" width="50" height="6" rx="3"/>
+          <rect x="240" y="128" width="40" height="6" rx="3"/>
+        </g>
+        <rect x="240" y="24" width="56" height="8" rx="4" fill="#2340F5"/>
+        <rect x="240" y="112" width="56" height="8" rx="4" fill="#2340F5"/>
+        <rect x="24" y="208" width="272" height="22" fill="#E3E7FE"/>
+        <path d="M24 208h272v88H24zM112 208v88M200 208v88M24 230h272M24 252h272M24 274h272" fill="none" stroke="#101114" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- layer 4 · experience -->
+    <g class="m-l4">
+      <use href="#sheet" transform="matrix(.7794 .45 -.7794 .45 1060 162)" fill="#101114" fill-opacity=".08"/>
+      <g transform="matrix(.7794 .45 -.7794 .45 1060 150)">
+        <use href="#sheet" fill="#FFFFFF" stroke="#101114" stroke-width="2"/>
+        <rect x="24" y="24" width="272" height="92" rx="6" fill="#2340F5"/>
+        <rect x="40" y="46" width="128" height="18" rx="3" fill="#FFFFFF"/>
+        <rect x="40" y="74" width="84" height="8" rx="4" fill="#FFFFFF" fill-opacity=".7"/>
+        <rect x="238" y="44" width="36" height="52" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+        <g fill="none" stroke="#2340F5" stroke-width="2">
+          <rect x="24" y="132" width="52" height="14" rx="7"/><rect x="84" y="132" width="52" height="14" rx="7"/>
+          <rect x="144" y="132" width="52" height="14" rx="7"/><rect x="204" y="132" width="52" height="14" rx="7"/>
+        </g>
+        <rect x="24" y="164" width="140" height="12" rx="3" fill="#101114"/>
+        <g fill="#555A66" fill-opacity=".5">
+          <rect x="24" y="184" width="240" height="7" rx="3.5"/><rect x="24" y="197" width="220" height="7" rx="3.5"/>
+          <rect x="24" y="210" width="230" height="7" rx="3.5"/>
+        </g>
+        <path d="M88 256h40M192 256h40" stroke="#101114" stroke-width="2"/>
+        <rect x="24" y="236" width="64" height="40" rx="6" fill="#E3E7FE" stroke="#101114" stroke-width="2"/>
+        <rect x="128" y="236" width="64" height="40" rx="6" fill="#E3E7FE" stroke="#101114" stroke-width="2"/>
+        <rect x="232" y="236" width="64" height="40" rx="6" fill="#101114"/>
+      </g>
+    </g>
+
+    <!-- stack guides -->
+    <path class="m-guide" d="M811 294v270M1309 294v270M1060 438v270" fill="none" stroke="#2340F5" stroke-width="1.5" stroke-dasharray="3 6" stroke-opacity=".8"/>
+
+    <!-- callouts -->
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="1.6" fill="#101114" font-weight="700">
+      <g class="m-c4"><path d="M1320 294h22" stroke="#2340F5" stroke-width="1.5"/><circle cx="1320" cy="294" r="3.5" fill="#2340F5"/><text x="1392" y="299" fill="#2340F5">EXPERIENCE</text></g>
+      <g class="m-c3"><path d="M1320 384h22" stroke="#101114" stroke-width="1.5"/><circle cx="1320" cy="384" r="3.5"/><text x="1392" y="389">DOCUMENTATION</text></g>
+      <g class="m-c2"><path d="M1320 474h22" stroke="#101114" stroke-width="1.5"/><circle cx="1320" cy="474" r="3.5"/><text x="1392" y="479">ARCHITECTURE</text></g>
+      <g class="m-c1"><path d="M1320 564h22" stroke="#101114" stroke-width="1.5"/><circle cx="1320" cy="564" r="3.5"/><text x="1392" y="569">CODE</text></g>
+    </g>
+    <g font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, Georgia, 'Times New Roman', serif" font-style="italic" font-size="28" fill="#2340F5">
+      <text class="m-c4" x="1352" y="303">04</text>
+      <text class="m-c3" x="1352" y="393">03</text>
+      <text class="m-c2" x="1352" y="483">02</text>
+      <text class="m-c1" x="1352" y="573">01</text>
+    </g>
+
+    <path d="M80 724h1440" stroke="#101114" stroke-opacity=".18"/>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
+  <title id="title">waypost — Webhooks that arrive. Fictional demonstration project.</title>
+  <desc id="desc">Dark illustration for a fictional Go webhook delivery service. Three delivery lanes leave an ingest node and pass waypoints on the way to three endpoints. Two deliveries succeed on the first attempt; the middle one retries once with backoff and then succeeds. The animation plays once in under three seconds and is disabled when reduced motion is requested; hero-still.svg is the final frame.</desc>
+  <!-- motion:start -->
+  <style>
+    .m-copy { animation: m-fade .8s ease-out both; }
+    .m-p1 { animation: m-travel 1.4s .4s cubic-bezier(.45,0,.2,1) both; }
+    .m-p2 { animation: m-travel 1.8s .6s cubic-bezier(.45,0,.2,1) both; }
+    .m-p3 { animation: m-travel 1.2s .8s cubic-bezier(.45,0,.2,1) both; }
+    .m-retry { animation: m-fade .5s 1.3s ease-out both; }
+    .m-ok1 { animation: m-fade .4s 1.8s ease-out both; }
+    .m-ok3 { animation: m-fade .4s 2.0s ease-out both; }
+    .m-ok2 { animation: m-fade .4s 2.4s ease-out both; }
+    @keyframes m-fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes m-travel { from { opacity: 0; transform: translateX(-400px); } 12% { opacity: 1; } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <!-- motion:end -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#E8EEF7" stroke-opacity=".035"/></pattern>
+    <clipPath id="frame"><rect width="1600" height="680" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1600" height="680" fill="#0B1220"/>
+    <rect width="1600" height="680" fill="url(#grid)"/>
+
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="2">
+      <text x="80" y="76" fill="#E8EEF7" font-weight="700">WAYPOST</text>
+      <text x="196" y="76" fill="#8A97AD">DEMO PROJECT</text>
+      <text x="1520" y="76" fill="#F5B84B" text-anchor="end">FICTIONAL EXAMPLE — NOT A REAL SERVICE</text>
+    </g>
+    <path d="M80 98h1440" stroke="#22304A"/>
+
+    <!-- copy -->
+    <g class="m-copy">
+      <path d="M86 196v116" stroke="#3DDC97" stroke-width="10"/>
+      <path d="M91 200h44l-12 16 12 16H91z" fill="#3DDC97"/>
+      <text x="150" y="304" fill="#E8EEF7" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="118" font-weight="800" textLength="500" lengthAdjust="spacingAndGlyphs">waypost</text>
+      <text x="82" y="384" fill="#E8EEF7" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="44" font-weight="300">Webhooks that arrive.</text>
+      <g fill="#8A97AD" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="23">
+        <text x="82" y="440">Signed delivery, retries with backoff</text>
+        <text x="82" y="472">and a replayable log. Written in Go.</text>
+      </g>
+      <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" letter-spacing="1.4" fill="#E8EEF7">
+        <rect x="82" y="530" width="132" height="34" rx="17" fill="none" stroke="#22304A" stroke-width="2"/><text x="148" y="552" text-anchor="middle">HMAC-SHA256</text>
+        <rect x="226" y="530" width="132" height="34" rx="17" fill="none" stroke="#22304A" stroke-width="2"/><text x="292" y="552" text-anchor="middle">BACKOFF</text>
+        <rect x="370" y="530" width="132" height="34" rx="17" fill="none" stroke="#22304A" stroke-width="2"/><text x="436" y="552" text-anchor="middle">DEAD-LETTER</text>
+        <rect x="514" y="530" width="104" height="34" rx="17" fill="none" stroke="#22304A" stroke-width="2"/><text x="566" y="552" text-anchor="middle">REPLAY</text>
+      </g>
+    </g>
+
+    <!-- ingest node -->
+    <rect x="820" y="180" width="110" height="320" rx="16" fill="#111B2E" stroke="#22304A" stroke-width="2"/>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" letter-spacing="1.4">
+      <text x="875" y="214" fill="#E8EEF7" font-size="13" font-weight="700" text-anchor="middle">INGEST</text>
+      <text x="875" y="476" fill="#8A97AD" font-size="11" text-anchor="middle">POST /events</text>
+    </g>
+
+    <!-- lanes and waypoints -->
+    <g stroke="#22304A" stroke-width="2" fill="none">
+      <path d="M930 250h450M930 340h450M930 430h450"/>
+      <path d="M1030 238v24M1150 238v24M1270 238v24M1030 328v24M1150 328v24M1270 328v24M1030 418v24M1150 418v24M1270 418v24"/>
+    </g>
+    <g fill="#0B1220" stroke="#8A97AD" stroke-width="2">
+      <circle cx="1030" cy="250" r="5"/><circle cx="1150" cy="250" r="5"/><circle cx="1270" cy="250" r="5"/>
+      <circle cx="1030" cy="340" r="5"/><circle cx="1150" cy="340" r="5"/><circle cx="1270" cy="340" r="5"/>
+      <circle cx="1030" cy="430" r="5"/><circle cx="1150" cy="430" r="5"/><circle cx="1270" cy="430" r="5"/>
+    </g>
+
+    <!-- retry with backoff on lane 2 -->
+    <g class="m-retry">
+      <path d="M1150 330c20-46 100-46 120 0" fill="none" stroke="#F5B84B" stroke-width="2" stroke-dasharray="5 6"/>
+      <path d="M1262 322l8 8 4-11" fill="none" stroke="#F5B84B" stroke-width="2"/>
+      <text x="1210" y="284" fill="#F5B84B" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="1.2" text-anchor="middle">RETRY · 2s</text>
+    </g>
+
+    <!-- packets -->
+    <rect class="m-p1" x="1336" y="241" width="32" height="18" rx="5" fill="#3DDC97"/>
+    <rect class="m-p2" x="1336" y="331" width="32" height="18" rx="5" fill="#3DDC97"/>
+    <rect class="m-p3" x="1336" y="421" width="32" height="18" rx="5" fill="#3DDC97"/>
+
+    <!-- endpoints -->
+    <g fill="#111B2E" stroke="#22304A" stroke-width="2">
+      <rect x="1380" y="218" width="140" height="64" rx="12"/>
+      <rect x="1380" y="308" width="140" height="64" rx="12"/>
+      <rect x="1380" y="398" width="140" height="64" rx="12"/>
+    </g>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="1.2" fill="#E8EEF7" font-weight="700">
+      <text x="1400" y="245">ENDPOINT A</text><text x="1400" y="335">ENDPOINT B</text><text x="1400" y="425">ENDPOINT C</text>
+    </g>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="1" fill="#3DDC97">
+      <text class="m-ok1" x="1400" y="266">200 · 1st try</text>
+      <text class="m-ok2" x="1400" y="356">200 · 2nd try</text>
+      <text class="m-ok3" x="1400" y="446">202 · 1st try</text>
+    </g>
+
+    <text x="820" y="560" fill="#8A97AD" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="1.4">AT-LEAST-ONCE DELIVERY · EVERY ATTEMPT IS LOGGED</text>
+    <path d="M80 614h1440" stroke="#22304A"/>
+  </g>
+</svg>

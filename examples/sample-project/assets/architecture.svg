@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">waypost architecture (fictional)</title>
+  <desc id="desc">Request path from left to right: producers send HTTPS requests to the ingest API, which inserts events into Postgres; the dispatcher claims due deliveries and posts signed requests to subscriber endpoints. Failure paths: on a 5xx or timeout the dispatcher hands the delivery to the retry scheduler, which writes the next attempt time back to Postgres; after the maximum number of attempts the delivery moves to the dead-letter table. The waypostctl CLI replays dead-lettered events through the ingest API. The dispatcher exposes Prometheus metrics.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#E8EEF7" stroke-opacity=".035"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#E8EEF7"/></marker>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#F5B84B"/></marker>
+    <clipPath id="frame"><rect width="1600" height="760" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1600" height="760" fill="#0B1220"/>
+    <rect width="1600" height="760" fill="url(#grid)"/>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="2">
+      <text x="80" y="72" fill="#E8EEF7" font-weight="700">WAYPOST</text>
+      <text x="196" y="72" fill="#8A97AD">ARCHITECTURE</text>
+      <text x="1520" y="72" fill="#F5B84B" text-anchor="end">FIG. 01 — FICTIONAL EXAMPLE</text>
+    </g>
+    <path d="M80 94h1440" stroke="#22304A"/>
+
+    <!-- request path -->
+    <g fill="none" stroke="#E8EEF7" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M280 380h72"/><path d="M600 380h72"/><path d="M920 380h72"/><path d="M1240 380h72"/>
+    </g>
+    <g fill="none" stroke="#8A97AD" stroke-width="2" stroke-dasharray="2 6">
+      <path d="M1120 300v-62" marker-end="url(#arrow)"/>
+    </g>
+    <!-- failure paths -->
+    <g fill="none" stroke="#F5B84B" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow-warn)">
+      <path d="M1060 460v155H928"/>
+      <path d="M800 560v-70"/>
+      <path d="M1180 460v155h132"/>
+      <path d="M480 560v-92"/>
+    </g>
+
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" letter-spacing="1.2" fill="#8A97AD" text-anchor="middle">
+      <text x="316" y="366">HTTPS</text><text x="636" y="366">INSERT</text><text x="956" y="366">CLAIM</text><text x="1276" y="366">POST</text>
+      <text x="1134" y="270" text-anchor="start">scrape</text>
+      <g fill="#F5B84B" text-anchor="start">
+        <text x="938" y="640">5xx · timeout</text>
+        <text x="814" y="530">next_attempt_at</text>
+        <text x="1194" y="640">max attempts</text>
+        <text x="494" y="520">replay</text>
+      </g>
+    </g>
+
+    <!-- nodes -->
+    <g fill="#111B2E" stroke="#22304A" stroke-width="2">
+      <rect x="80" y="300" width="200" height="160" rx="16"/>
+      <rect x="360" y="300" width="240" height="160" rx="16"/>
+      <rect x="1000" y="300" width="240" height="160" rx="16" stroke="#3DDC97"/>
+      <rect x="1320" y="300" width="200" height="160" rx="16"/>
+      <rect x="680" y="560" width="240" height="110" rx="16"/>
+      <rect x="1320" y="560" width="200" height="110" rx="16"/>
+      <rect x="360" y="560" width="240" height="110" rx="16"/>
+      <rect x="1000" y="138" width="240" height="96" rx="16" stroke-dasharray="6 6"/>
+      <path d="M680 300v160c0 11 54 20 120 20s120-9 120-20V300"/>
+      <ellipse cx="800" cy="300" rx="120" ry="20"/>
+    </g>
+
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="17" letter-spacing="1.6" font-weight="700" fill="#E8EEF7">
+      <text x="104" y="346">PRODUCERS</text>
+      <text x="384" y="346">INGEST API</text>
+      <text x="704" y="356">POSTGRES</text>
+      <text x="1024" y="346" fill="#3DDC97">DISPATCHER</text>
+      <text x="1344" y="346">ENDPOINTS</text>
+      <text x="704" y="602">RETRY</text>
+      <text x="1344" y="602">DEAD-LETTER</text>
+      <text x="384" y="602">waypostctl</text>
+      <text x="1024" y="178">METRICS</text>
+    </g>
+    <g font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="16" fill="#8A97AD">
+      <text x="104" y="380">Your services</text><text x="104" y="404">emit events</text>
+      <text x="384" y="380">POST /events</text><text x="384" y="404">Validates, stores,</text><text x="384" y="428">answers 202</text>
+      <text x="704" y="390">events</text><text x="704" y="414">deliveries</text><text x="704" y="438">attempts</text>
+      <text x="1024" y="380">Worker pool claims</text><text x="1024" y="404">due deliveries and</text><text x="1024" y="428">signs each request</text>
+      <text x="1344" y="380">Subscriber URLs</text><text x="1344" y="404">verify the HMAC</text><text x="1344" y="428">signature</text>
+      <text x="704" y="630">Exponential backoff</text><text x="704" y="652">with jitter</text>
+      <text x="1344" y="630">Kept for replay</text><text x="1344" y="652">and inspection</text>
+      <text x="384" y="630">CLI: list, inspect</text><text x="384" y="652">and replay events</text>
+      <text x="1024" y="208">Prometheus /metrics</text>
+    </g>
+
+    <!-- legend -->
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="1.4" fill="#8A97AD">
+      <path d="M80 718h40" stroke="#E8EEF7" stroke-width="2"/><text x="132" y="722">REQUEST PATH</text>
+      <path d="M290 718h40" stroke="#F5B84B" stroke-width="2" stroke-dasharray="7 6"/><text x="342" y="722">FAILURE PATH</text>
+      <path d="M500 718h40" stroke="#8A97AD" stroke-width="2" stroke-dasharray="2 6"/><text x="552" y="722">OBSERVABILITY</text>
+    </g>
+  </g>
+</svg>

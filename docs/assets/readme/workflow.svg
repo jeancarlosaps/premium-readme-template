@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="440" viewBox="0 0 1600 440" role="img" aria-labelledby="title desc">
+  <title id="title">How Premium README works</title>
+  <desc id="desc">Five steps in a row. 01 Inspect: read the code, scripts, CI and current docs. 02 Verify: keep only claims the repository can prove. 03 Design: derive an identity from the project itself. 04 Write: compose the README and original SVG assets. 05 Prove: validate, render, review the diff and open a pull request.</desc>
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#101114" opacity=".09"/></pattern>
+    <clipPath id="frame"><rect width="1600" height="440" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1600" height="440" fill="#F4F2EC"/>
+    <rect width="1600" height="440" fill="url(#dots)"/>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="2">
+      <text x="80" y="72" fill="#101114" font-weight="700">PRT/02</text>
+      <text x="180" y="72" fill="#555A66">THE PROCESS</text>
+      <text x="1520" y="72" fill="#555A66" text-anchor="end">FIVE STEPS — ONE PULL REQUEST</text>
+    </g>
+    <path d="M80 92h1440" stroke="#101114" stroke-opacity=".18"/>
+    <path d="M80 92h112" stroke="#2340F5" stroke-width="3"/>
+
+    <!-- connectors -->
+    <path d="M352 250h20M644 250h20M936 250h20M1228 250h20" stroke="#2340F5" stroke-width="2"/>
+
+    <g fill="#FFFFFF" stroke="#101114" stroke-width="1.5">
+      <rect x="80" y="130" width="272" height="230" rx="14"/>
+      <rect x="372" y="130" width="272" height="230" rx="14"/>
+      <rect x="664" y="130" width="272" height="230" rx="14"/>
+      <rect x="956" y="130" width="272" height="230" rx="14"/>
+    </g>
+    <rect x="1248" y="130" width="272" height="230" rx="14" fill="#101114"/>
+
+    <!-- icons -->
+    <g fill="none" stroke="#101114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="306" cy="172" r="11"/><path d="M314 180l10 10"/>
+      <rect x="584" y="160" width="30" height="30" rx="6"/><path d="M591 175l6 6 11-12"/>
+      <circle cx="891" cy="175" r="13"/><path d="M891 155v40M871 175h40"/>
+      <path d="M1170 158h18l8 8v28h-26zM1188 158v8h8M1176 176h14M1176 184h14"/>
+    </g>
+    <circle cx="1475" cy="175" r="16" fill="#2340F5"/>
+    <path d="M1467 175l6 6 10-11" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, Georgia, 'Times New Roman', serif" font-style="italic" font-size="40" fill="#2340F5">
+      <text x="108" y="196">01</text><text x="400" y="196">02</text><text x="692" y="196">03</text><text x="984" y="196">04</text>
+      <text x="1276" y="196" fill="#9AA8FF">05</text>
+    </g>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="16" letter-spacing="2" font-weight="700" fill="#101114">
+      <text x="108" y="246">INSPECT</text><text x="400" y="246">VERIFY</text><text x="692" y="246">DESIGN</text><text x="984" y="246">WRITE</text>
+      <text x="1276" y="246" fill="#FFFFFF">PROVE</text>
+    </g>
+    <g font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="17" fill="#555A66">
+      <text x="108" y="290">Read the code, scripts,</text><text x="108" y="314">CI and current docs.</text>
+      <text x="400" y="290">Keep only claims the</text><text x="400" y="314">repository can prove.</text>
+      <text x="692" y="290">Derive an identity from</text><text x="692" y="314">the project itself.</text>
+      <text x="984" y="290">Compose the README and</text><text x="984" y="314">original SVG assets.</text>
+      <g fill="#C9CCD6"><text x="1276" y="290">Validate, render, review</text><text x="1276" y="314">the diff, open a PR.</text></g>
+    </g>
+
+    <text x="80" y="404" fill="#555A66" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" letter-spacing="1.8">EVERY CLAIM TRACES TO A FILE, A COMMAND OR AN OUTPUT.</text>
+  </g>
+</svg>
