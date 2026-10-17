@@ -41,7 +41,7 @@ Exit code `0` means no errors; warnings are printed but do not fail.
 | Placeholders | No `{{PLACEHOLDER}}` or `lorem ipsum` outside template directories |
 | Mermaid | Each block starts with a known diagram type |
 | SVG (referenced from Markdown) | Well-formed XML (via `xmllint`), `<title>`, `role="img"`, `viewBox`, no `<script>`, `<foreignObject>` or event handlers, no remote images, size limits |
-| Motion | Animated SVGs have a `prefers-reduced-motion: reduce` rule and a `-still.svg` twin with the same `viewBox` and no animation; with motion markers, the twin must equal the animated file minus the motion block; the Markdown should serve the twin through `<picture>` |
+| Motion | Animated SVGs have a `prefers-reduced-motion` rule (`no-preference` gate or `reduce` override), no `@keyframes` starting at `opacity: 0`, and a `-still.svg` twin with the same `viewBox` and no animation; with motion markers, the twin must equal the animated file minus the motion block; the Markdown should serve the twin through `<picture>` |
 
 Links inside code blocks, inline code and HTML comments are ignored on purpose: they are examples.
 
