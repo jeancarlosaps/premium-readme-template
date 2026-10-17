@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
   <title id="title">waypost — Webhooks that arrive. Fictional demonstration project.</title>
-  <desc id="desc">Dark illustration for a fictional Go webhook delivery service. Three delivery lanes leave an ingest node and pass waypoints on the way to three endpoints. Two deliveries succeed on the first attempt; the middle one retries once with backoff and then succeeds. The animation plays once in under three seconds and is disabled when reduced motion is requested; hero-still.svg is the final frame.</desc>
+  <desc id="desc">Dark illustration for a fictional Go webhook delivery service. Three delivery lanes leave an ingest node and pass waypoints on the way to three endpoints. Two deliveries succeed on the first attempt; the middle one retries once with backoff and then succeeds. The packets travel to the endpoints once, in under three seconds; every element is visible from the first frame, and nothing moves when reduced motion is requested. hero-still.svg is the final frame.</desc>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#E8EEF7" stroke-opacity=".035"/></pattern>
     <clipPath id="frame"><rect width="1600" height="680" rx="24"/></clipPath>
@@ -17,7 +17,7 @@
     <path d="M80 98h1440" stroke="#22304A"/>
 
     <!-- copy -->
-    <g class="m-copy">
+    <g>
       <path d="M86 196v116" stroke="#3DDC97" stroke-width="10"/>
       <path d="M91 200h44l-12 16 12 16H91z" fill="#3DDC97"/>
       <text x="150" y="304" fill="#E8EEF7" font-family="'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, 'Liberation Sans', sans-serif" font-size="118" font-weight="800" textLength="500" lengthAdjust="spacingAndGlyphs">waypost</text>
