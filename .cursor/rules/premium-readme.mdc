@@ -1,0 +1,25 @@
+---
+description: Premium README standard. Use when creating, rewriting, auditing or illustrating a README, or when asked to use or apply the Premium README Template.
+alwaysApply: false
+---
+
+# Premium README
+
+A README that looks like a product page and reads like an engineering document.
+
+Choose the procedure, read it in full, and follow it:
+
+- Apply or rewrite: <https://raw.githubusercontent.com/jeancarlosaps/premium-readme-template/main/prompts/apply-to-project.md>
+- Audit: <https://raw.githubusercontent.com/jeancarlosaps/premium-readme-template/main/prompts/audit-existing-readme.md>
+- Illustrations only: <https://raw.githubusercontent.com/jeancarlosaps/premium-readme-template/main/prompts/create-visual-assets.md>
+
+If you cannot fetch URLs, ask the user to clone the template and add it to the workspace, then read the same paths locally.
+
+Essentials, always:
+
+- Documentation only. Never change application code, dependencies or CI without permission.
+- Every claim traces to a file, a command you ran or an output you saw. No invented features, results, badges or roadmap.
+- Original SVG assets in the project's own identity. Animated hero runs once, ≤ 4 s, respects `prefers-reduced-motion`, and has a generated `hero-still.svg`.
+- Essential information lives in Markdown, not only in images. Every image has useful alt text.
+- Work on a branch, validate, review the diff, open a pull request. Never commit to the default branch, never merge.
+- Report what you could not verify.
